@@ -93,9 +93,9 @@ loja-jogos/
 │   │   ├── 🎯 painel-principal/      # Catálogo principal
 │   │   ├── ➕ cadastro-produto/      # Formulário de cadastro
 │   │   ├── 📋 menu/                  # Barra de navegação
-│   │   └── 👣 rodape/                # Footer com contatos
+│   │   └── 👣 rodape/                # Rodapé com contatos
 │   ├── servicos/
-│   │   └── 🔌 produto.service.ts    # API Communication Layer
+│   │   └── 🔌 produto.service.ts    # API
 │   └── 📝 app-routing-module.ts     # Sistema de rotas
 ├── 🖼️ public/imagens/              # Assets de imagens
 ├── 🗄️ db.json                      # Banco de dados fake
