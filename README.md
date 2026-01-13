@@ -1,8 +1,11 @@
 # 🎮 LOJA DE JOGOS - GAME STORE
 
 > **MISSÃO:** Gerenciar catálogo de jogos épicos usando Angular + API REST
+
 > **DESENVOLVEDOR:** Victor Vasconcelos
+
 > **ACADEMIA:** SENAI - Desenvolvedor Full Stack
+
 > **NÍVEL:** Full Stack Warrior 🗡️
 
 ---
