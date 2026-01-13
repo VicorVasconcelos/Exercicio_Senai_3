@@ -1,0 +1,18 @@
+.navbar-brand:hover {
+  opacity: 0.9;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: 500;
+}

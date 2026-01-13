@@ -1,0 +1,123 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow">
+        <div class="card-header bg-success text-white">
+          <h3 class="mb-0">
+            <i class="bi" [ngClass]="produto.id ? 'bi-pencil-square' : 'bi-plus-circle'"></i>
+            {{ produto.id ? 'Editar Produto' : 'Cadastrar Novo Produto' }}
+          </h3>
+        </div>
+        <div class="card-body p-4">
+          <form (ngSubmit)="salvarProduto()" #produtoForm="ngForm">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label fw-bold">
+                  <i class="bi bi-controller me-2"></i>Nome do Produto
+                </label>
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  [(ngModel)]="produto.produto"
+                  name="produto"
+                  placeholder="Ex: God of War"
+                  required
+                  #nomeProduto="ngModel"
+                />
+                <div *ngIf="nomeProduto.invalid && nomeProduto.touched" class="text-danger small mt-1">
+                  Nome é obrigatório
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label fw-bold">
+                  <i class="bi bi-cash-coin me-2"></i>Preço (R$)
+                </label>
+                <input
+                  type="number"
+                  class="form-control form-control-lg"
+                  [(ngModel)]="produto.preco"
+                  name="preco"
+                  placeholder="0.00"
+                  step="0.01"
+                  min="0"
+                  required
+                  #precoProduto="ngModel"
+                />
+                <div *ngIf="precoProduto.invalid && precoProduto.touched" class="text-danger small mt-1">
+                  Preço é obrigatório
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-bold">
+                <i class="bi bi-text-paragraph me-2"></i>Descrição
+              </label>
+              <textarea
+                class="form-control"
+                [(ngModel)]="produto.descricao"
+                name="descricao"
+                rows="4"
+                placeholder="Descreva o produto..."
+                required
+                #descricaoProduto="ngModel"
+              ></textarea>
+              <div *ngIf="descricaoProduto.invalid && descricaoProduto.touched" class="text-danger small mt-1">
+                Descrição é obrigatória
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label fw-bold">
+                <i class="bi bi-image me-2"></i>Foto (Nome do Arquivo)
+              </label>
+              <div class="input-group">
+                <span class="input-group-text">imagens/</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="produto.foto"
+                  name="foto"
+                  placeholder="jogo1.PNG"
+                  required
+                  #fotoProduto="ngModel"
+                />
+              </div>
+              <div *ngIf="fotoProduto.invalid && fotoProduto.touched" class="text-danger small mt-1">
+                Nome do arquivo é obrigatório
+              </div>
+              <div *ngIf="produto.foto" class="mt-3">
+                <p class="small text-muted mb-2">Preview:</p>
+                <img
+                  [src]="'imagens/' + produto.foto"
+                  [alt]="produto.produto"
+                  class="img-thumbnail preview-img"
+                  (error)="imagemErro = true"
+                />
+                <div *ngIf="imagemErro" class="alert alert-warning mt-2">
+                  <i class="bi bi-exclamation-triangle me-2"></i>
+                  Imagem não encontrada. Verifique o nome do arquivo.
+                </div>
+              </div>
+            </div>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <a routerLink="/painel-principal" class="btn btn-secondary btn-lg">
+                <i class="bi bi-x-circle me-2"></i>Cancelar
+              </a>
+              <button
+                type="submit"
+                class="btn btn-success btn-lg"
+                [disabled]="produtoForm.invalid"
+              >
+                <i class="bi" [ngClass]="produto.id ? 'bi-check-circle' : 'bi-save'"></i>
+                {{ produto.id ? ' Atualizar' : ' Cadastrar' }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
