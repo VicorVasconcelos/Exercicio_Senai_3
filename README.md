@@ -135,8 +135,11 @@ Localização: `src/app/servicos/produto.service.ts`
 ## 👤 DESENVOLVEDOR - PLAYER INFO
 
 **🎮 Nick:** Victor Vasconcelos
+
 **📞 WhatsApp:** (61) 98438-5187
+
 **🏫 Academia:** SENAI - Desenvolvedor Full Stack
+
 **🎯 Status:** Em busca do próximo desafio!
 
 ---
